@@ -225,6 +225,7 @@ function validateEmail() {
     let regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
     if (!regex.test(email)) {
         notification.innerHTML = ' Email phải đúng định dạng';
+        return false
     }
     notification.innerHTML = '';
     return true;
@@ -242,6 +243,7 @@ function validatePass() {
     let regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     if (!regex.test(pass)) {
         notification.innerHTML = ' mật khẩu phải đúng định dạng';
+        return false
     }
     notification.innerHTML = '';
     return true;
@@ -259,6 +261,7 @@ function validateDate() {
     let date_regex = /^\d{2}\/\d{2}\/\d{4}$/ ;
     if (!date_regex.test(date)) {
         notification.innerHTML = 'Phải đúng định dạng mm/dd/yyyy';
+        return false
     }
     notification.innerHTML = '';
     return true;
